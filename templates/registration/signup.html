@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+
+{% block title %}
+    registration
+{% endblock %}
+
+{% block content %}
+    <div >
+        <h1>registration</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 px py-1">submit</button>
+        </form>
+        <div class="py-5 border-t border-gray-200 mt-5">
+            <a class="hover:text-blue-500 mt-3" href="{% url 'login' %}">
+                already have an account?
+            </a>
+        </div>
+    </div>
+{% endblock %}
